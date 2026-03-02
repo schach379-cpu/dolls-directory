@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
   }
 
   const body = await req.json();
-  const { title, description, city, zip, priceFrom, priceTo, tags } = body;
+  const { title, description, city, zip, priceFrom, priceTo, tags, images } = body;
 
   if (!title || !description || !city) {
     return NextResponse.json({ error: "Titel, Beschreibung und Stadt sind erforderlich." }, { status: 400 });
@@ -52,6 +52,18 @@ export async function POST(req: NextRequest) {
         listing_id: listing.id,
         name: t.name,
         value: t.value,
+      }))
+    );
+  }
+
+  // Insert images
+  if (images?.length > 0) {
+    await supabaseServer.from("listing_images").insert(
+      images.map((url: string, i: number) => ({
+        listing_id: listing.id,
+        url,
+        is_primary: i === 0,
+        sort_order: i,
       }))
     );
   }
