@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "memplex-memory": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "memplex-memory@latest"
+      ]
+    },
+    "supabase": {
+      "type": "http",
+      "url": "https://mcp.supabase.com/mcp"
+    }
+  }
+}
