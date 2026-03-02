@@ -63,7 +63,7 @@ export async function POST(req: NextRequest) {
         listing_id: listing.id,
         url,
         is_primary: i === 0,
-        sort_order: i,
+        order: i,
       }))
     );
   }

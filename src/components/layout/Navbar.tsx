@@ -142,6 +142,12 @@ export function Navbar() {
                 <Link href="/inserat/erstellen" className="block bg-rose-600 text-white text-sm font-semibold px-4 py-2.5 rounded-lg text-center" onClick={() => setMobileOpen(false)}>
                   Inserat erstellen
                 </Link>
+                <Link href="/nachrichten" className="block text-sm text-zinc-300 py-2" onClick={() => setMobileOpen(false)}>
+                  Nachrichten
+                </Link>
+                <Link href="/anbieter/dashboard" className="block text-sm text-zinc-300 py-2" onClick={() => setMobileOpen(false)}>
+                  Dashboard
+                </Link>
                 <button onClick={() => signOut()} className="block w-full text-left text-sm text-rose-400 py-2">
                   Abmelden
                 </button>
